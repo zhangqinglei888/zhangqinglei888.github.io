@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="swiper.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=DmvaTbVhDI5FzcLmG8zcZQdPllicdMXQ"></script>
+
+		<style>
+			* {
+			  margin: 0;
+			  padding: 0;
+			  text-decoration: none;
+			  list-style: none;
+			}
+			
+			[v-cloak] {
+			  display: none;
+			}
+			
+			a {
+			  color: #fff;
+			}
+			.header {
+			  width: 100%;
+			  height: 50px;
+			  position: fixed;
+			  z-index: 999;
+			}
+			.icon {
+			  width: 50%;
+			  height: 100px;
+			  float: left;
+			  z-index: 999;
+			  padding-top: 20px;
+			}
+			.icon img {
+			  width: 200px;
+			  height: 50px;
+			  position: fixed;
+			  z-index: 999;
+			  margin-left: 100px;
+			}
+			.oUl {
+			  width: 50%;
+			  height: 20px;
+			  float: right;
+			  line-height: 50px;
+			}
+			ul {
+			  height: 50px;
+			  float: right;
+			}
+			ul > li {
+			  width: 100px;
+			  height: 20px;
+			  float: left;
+			  font-size: 15px;
+			  color: #fff;
+			}
+			ul > li a {
+			  color: #fff;
+			}
+			ul > li a:hover {
+			  color: #cbdee6;
+			  text-decoration: none;
+			}
+			.no1 {
+			  width: 100%;
+			  color: #fff;
+			  position: absolute;
+			  font-size: 20px;
+			  margin-top: 20px;
+			}
+			
+			.no1 span {
+			  display: inline-block;
+			}
+			
+			.no2 {
+			  min-height: 500px;
+			  position: relative;
+			}
+			
+			.no3 {
+			  height: 150px;
+			  background: #cccccc;
+			  line-height: 50px;
+			}
+			.bj {
+			  width: 100%px;
+			  height: 844px;
+			  background: url("https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNzdiZjlhODA2NWZhYjQ0ZDFhMDUxOTRkYTlhNjU3ODguanBn.jpg");
+			}
+			.bigbox {
+			  width: 100%;
+			  height: 570px;
+			  display: inline-block;
+			  margin-top: 150px;
+			  /* background: #ccc; */
+			}
+			.bigbox h2 {
+			  font-size: 70px;
+			  color: #fff;
+			  padding-left: 100px;
+			}
+			.bigbox_1 {
+			  width: 50%;
+			  height: 300px;
+			  /* background: red; */
+			  float: left;
+			}
+			.bigbox_2 {
+			  width: 50%;
+			  height: 300px;
+			  /* background: yellow; */
+			  float: left;
+			}
+			.bigbox_2 .oSpan {
+			  width: 100px;
+			  height: 90px;
+			  font-size: 16px;
+			  margin-top: 10px;
+			}
+			.oSpan .oNum {
+			  font-size: 26px;
+			}
+			.bigbox_2 span {
+			  display: block;
+			  color: #fff;
+			}
+			.bigbox_3 {
+			  width: 42%;
+			  height: 250px;
+			  /* background: yellow; */
+			  color: #fff;
+			  float: left;
+			}
+			.bigbox_4 {
+			  width: 58%;
+			  height: 250px;
+			  /* background: yellow; */
+			  float: left;
+			}
+			.bigbox_3_1 {
+			  margin-left: 100px;
+			  font-size: 13px;
+			  line-height: 30px;
+			  padding-top: 60px;
+			}
+			.bigbox_3_2 {
+			  padding-left: 100px;
+			  padding-top: 50px;
+			}
+			
+			/* swiper */
+			html,
+			body {
+			  position: relative;
+			  height: 100%;
+			}
+			body {
+			  /* background: #eee; */
+			  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			  font-size: 14px;
+			  color: #000;
+			  margin: 0;
+			  padding: 0;
+			}
+			.swiper-container {
+			  width: 600px;
+			  height: 220px;
+			}
+			.swiper-slide {
+			  text-align: center;
+			  font-size: 18px;
+			  /* background: #fff; */
+			
+			  /* Center slide text vertically */
+			  display: -webkit-box;
+			  display: -ms-flexbox;
+			  display: -webkit-flex;
+			  display: flex;
+			  -webkit-box-pack: center;
+			  -ms-flex-pack: center;
+			  -webkit-justify-content: center;
+			  justify-content: center;
+			  -webkit-box-align: center;
+			  -ms-flex-align: center;
+			  -webkit-align-items: center;
+			  align-items: center;
+			}
+			.swiper-container img {
+			  width: 100%;
+			  height: 100%;
+			}
+			.smallBox {
+			  width: 100%;
+			  height: 20px;
+			  background: #f3faff;
+			}
+			.footerBox {
+			  width: 100%;
+			  height: 600px;
+			  background: #fff;
+			}
+			.footerBox_1 {
+			  width: 33.3%;
+			  height: 500px;
+			  float: left;
+			  /* background: red; */
+			}
+			.footerBox_2 {
+			  width: 33.4%;
+			  float: left;
+			  height: 500px;
+			  /* background: blue; */
+			}
+			.footerBox_3 {
+			  width: 20%;
+			  height: 500px;
+			  float: left;
+			  margin-left: 100px;
+			  margin-top: 100px;
+			  /* background: yellowgreen; */
+			}
+			.footerBox_img {
+			  width: 400px;
+			  height: 250px;
+			  margin-left: 100px;
+			  margin-top: 100px;
+			}
+			.footerBox_img img {
+			  width: 100%;
+			  height: 100%;
+			}
+			.footerBox_title {
+			  color: #13304a;
+			  font-size: 20px;
+			  padding-top: 30px;
+			}
+			.footerBox_content {
+			  color: #379cf4;
+			  font-size: 14px;
+			  padding-top: 20px;
+			}
+			.footerBox_cont {
+			  color: #596e80;
+			  font-size: 12px;
+			  margin-top: 30px;
+			  /* margin: 0 100px 0 0; */
+			  line-height: 40px;
+			}
+			.header_title {
+			  color: #13304a;
+			  font-size: 36px;
+			}
+			.header_title2 {
+			  color: #596e80;
+			  font-size: 14px;
+			  padding-top: 30px;
+			}
+			/* .tongyong {
+			  width: 100%;
+			  height: 400px;
+			  background: #13304a;
+			} */
+			 html, body {
+			        position: relative;
+			        height: 100%;
+			    }
+			    body {
+			       
+			        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+			        font-size: 14px;
+			        color:#000;
+			        margin: 0;
+			        padding: 0;
+			    }
+			    .swiper-container {
+			        width: 100%;
+			        height: 100%;
+			    }
+			    .swiper-slide {
+			        text-align: center;
+			        font-size: 18px;
+			        background: #fff;
+			
+			        /* Center slide text vertically */
+			        display: -webkit-box;
+			        display: -ms-flexbox;
+			        display: -webkit-flex;
+			        display: flex;
+			        -webkit-box-pack: center;
+			        -ms-flex-pack: center;
+			        -webkit-justify-content: center;
+			        justify-content: center;
+			        -webkit-box-align: center;
+			        -ms-flex-align: center;
+			        -webkit-align-items: center;
+			        align-items: center;
+			    }
+				.XSDFXPage {
+				        width: 90%;
+				        height: 400px;
+				    }
+				/* #allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";} */
+		</style>
+	</head>
+	<body>
+		<div id="box" v-cloak>
+			<div style="width: 100%; height: 80px;position: absolute;z-index: 10;">
+				<div style="width: 40%;height: 68px;float: left;padding-top: 12px;">
+					<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzM0MDdjY2U4MDk5MTljNjZhZmNjZDYxMWJkNTIxZDkucG5n.png"
+					 style="width: 230px;height: auto;float:left;margin-left: 20%;">
+				</div>
+				<div style="width: 50%;height: 80px;float: left;margin-left: 10%;">
+					<div style="float: left;line-height: 80px;width: 10%;text-align: center;" v-for="i in arr">
+						<a :href="i.path" style="color: #ccc;">
+							{{i.name}}
+						</a>
+					</div>
+				</div>
+			</div>
+			<div style="min-height: 1300px;">
+				<router-view></router-view>
+			</div>
+			<div style="height: 380px;background-color: #13304a;">
+				<div style="width: 90%;height: 320px;margin: 0 auto;">
+					<div style="width: 30%;height: 240px;padding-top: 80px;float: left;">
+						<p style="font-size: 38px;line-height: 80px;color: #FFFFFF;">TRAVEL</p>
+						<p style="font-size: 14px;color: #FFFFFF;line-height: 24px;">我公司会以安全、快乐、环保为理念，以敬业、诚信、善良为本，期待与全国各地的户外公司、户外俱乐部、旅行社进行合作。</p>
+					</div>
+					<div style="width: 25%;height: 240px;float: left;margin-left: 5%;">
+						<p style="font-size: 38px;line-height: 80px;color: #FFFFFF;padding-top: 80px;">CONTACT</p>
+						<p style="font-size: 14px;color: #FFFFFF;line-height: 24px;"><span style="color: #007AFF;">—</span>　深圳市南京路双港码头6楼</p>
+						<p style="font-size: 14px;color: #FFFFFF;line-height: 24px;"><span style="color: #007AFF;">—</span>　123@admin.com</p>
+						<p style="font-size: 14px;color: #FFFFFF;line-height: 24px;"><span style="color: #007AFF;">—</span>011-555-12345</p>
+					</div>
+					<div style="width: 30%;height: 320px;float: left;position: relative;">
+						<div style="width: 256px;height: 64px;position: absolute;top: 100px;left: 30px;overflow: hidden;">
+							<img src="https://fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png">
+						</div>
+						<p style="font-size: 15px;line-break: 24px;position: absolute;top: 180px;color: #FFFFFF;">强大专业的户外产品汇集平台，为您提供徒步、登山、露营、摄影、航海、越野等多种方式探索大自然。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<template id="no1">
+			<div>
+				<!-- <div class="icon">
+						<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzM0MDdjY2U4MDk5MTljNjZhZmNjZDYxMWJkNTIxZDkucG5n.png"
+							alt="">
+					</div> -->
+				<div class="bj">
+					<div class="bigbox">
+						<div class="bigbox_1">
+							<h2>
+								探索<br>
+								山野秘境<br>
+								发现纯粹自我<br>
+							</h2>
+
+						</div>
+						<div class="bigbox_2">
+							<div>
+								<div class="oSpan">
+									<span>海拔</span>
+									<span class="oNum">1650 m</span>
+								</div>
+								<div class="oSpan">
+									<span>路线</span>
+									<span class="oNum">7</span>
+								</div>
+								<div class="oSpan">
+									<span>游客 / 年</span>
+									<span class="oNum">3000 +</span>
+								</div>
+
+							</div>
+
+						</div>
+						<div class="bigbox_3">
+							<div class="bigbox_3_1">
+								背着背包的路上，听过许多故事，见过旅行风景。<br>
+								流转的时光，都成为命途中的点缀，<br>
+								不言不语都是好风景。<br>
+							</div>
+							<div class="bigbox_3_2">
+								CUSTOM
+							</div>
+						</div>
+						<div style="width: 500px;height: 230px;position: absolute;right: 100px;bottom: -50px;">
+
+							<div class="swiper-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtNDAweDI5MC5qcGc_p_p100_p_3D.jpg"></div>
+									<div class="swiper-slide"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctNDAweDI5MC5qcGc_p_p100_p_3D.jpg"></div>
+									<div class="swiper-slide"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtNDAweDI5MC5qcGc_p_p100_p_3D.jpg"></div>
+									<!-- <div class="swiper-slide">Slide 4</div>
+								            <div class="swiper-slide">Slide 5</div>
+								            <div class="swiper-slide">Slide 6</div>
+								            <div class="swiper-slide">Slide 7</div>
+								            <div class="swiper-slide">Slide 8</div>
+								            <div class="swiper-slide">Slide 9</div>
+								            <div class="swiper-slide">Slide 10</div> -->
+								</div>
+								<!-- Add Pagination -->
+								<div class="swiper-pagination"></div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div>
+
+						</div>
+						<!-- <div class="bigbox_4">
+								
+								<div class="swiper-container">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNDAweDI5MC5qcGc_p_p100_p_3D.jpg"
+												alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNDAweDI5MC5qcGc_p_p100_p_3D.jpg"
+												alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtNDAweDI5MC5qcGc_p_p100_p_3D.jpg"
+												alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtNDAweDI5MC5qcGc_p_p100_p_3D.jpg"
+												alt="">
+										</div>
+										<div class="swiper-slide">
+											<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctNDAweDI5MC5qcGc_p_p100_p_3D.jpg"
+												alt="">
+										</div>
+									</div>
+									
+									<div class="swiper-button-next"></div>
+									<div class="swiper-button-prev"></div>
+								</div>
+		
+							</div> -->
+					</div>
+					<div class="smallBox"></div>
+					<div class="footerBox">
+						<div class="footerBox_1">
+							<div class="footerBox_img">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctODAweDUwMC5qcGc_p_p100_p_3D.jpg"
+								 alt="">
+								<div class="footerBox_title">梵净山</div>
+								<div class="footerBox_content">Distance:4.3km　　Days:4</div>
+								<div class="footerBox_cont">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...</div>
+							</div>
+						</div>
+						<div class="footerBox_2">
+							<div class="footerBox_img">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtODAweDUwMC5qcGc_p_p100_p_3D.jpg"
+								 alt="">
+								<div class="footerBox_title">玉龙沙湖</div>
+								<div class="footerBox_content">Distance:3.8km　　Days:2</div>
+								<div class="footerBox_cont">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...</div>
+							</div>
+						</div>
+						<div class="footerBox_3">
+							<div class="header_title">RECOMM</div>
+							<div class="header_title2">精选当季热门目的地</div>
+							<div class="footerBox_cont" style="font-size: 13px;">
+								偶尔为街头独特的风景驻足，偶尔因高山流水的美丽停留，偶尔被惊鸿一瞥的美丽吸引；或者在春暖花开时，或者在河边放下一盏写着心愿的河灯，祝愿一切安好。</div>
+						</div>
+					</div>
+					<!-- <div class="tongyong">
+							<lee></lee>
+						</div> -->
+				</div>
+			</div>
+		</template>
+
+		<template id="no2">
+			<div>
+				<div style="width: 100%;height: 500px;position: relative;">
+					<div style="width: 100%;height: 500px;overflow: hidden;position: relative;">
+						<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg"
+						 style="width: 100%;height: auto;position: absolute;top: -180px;"></div>
+					<p style="font-size: 40px;color: #fff;position: absolute;top: 200px;margin-left: 45%;">ABOUT US</p>
+					<p style="font-size: 20px;color: #fff;position: absolute;top: 260px;margin-left: 20%;"><span style="color: blue;">————————————</span>
+						背上行囊去远方，那个梦寐以求的目的地。
+						<span style="color: blue;">————————————</p>
+				</div>
+				<div style="width: 90%;margin: 100px auto;height: 300px;">
+					<guanyu_one></guanyu_one>
+					<guanyu_to></guanyu_to>
+					<div style="width: 30%;height: 200px;float: right;">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNjAweDMwMC5qcGc_p_p100_p_3D.jpg"></div>
+								<div class="swiper-slide"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtNjAweDMwMC5qcGc_p_p100_p_3D.jpg"></div>
+								<div class="swiper-slide"><img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNjAweDMwMC5qcGc_p_p100_p_3D.jpg"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div style="width: 100%;height: 500px;padding-top: 50px;background-color: #f3faff;">
+					<div style="width: 90%;margin: 0 auto;height: 400px;">
+						<div style="width: 250px;height: 400px;float: left;">
+							<p style="font-size: 40px;line-height: 50px;">SERVICE</p>
+							<p style="font-size: 16px;margin-top: 30px;">多种探险类型可供选择 <span style="color: blue;">—</span>
+							</p>
+							<p style="font-size: 14px;line-height: 20px;margin-top: 50px;">偶尔为街头独特的风景驻足，偶尔因高山流水的美丽停留，偶尔被惊鸿一瞥的美丽吸引；或者在春暖花开时，或者在河边放下一盏写着心愿的河灯，祝愿一切安好。</p>
+						</div>
+
+
+
+						<!-- <dengshan></dengshan> -->
+						<div style="width: 250px;height: 400px;float: left;margin-left: 50px;">
+							<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNTAweDMzMC5qcGc_p_p100_p_3D.jpg"
+							 style="width: 100%;">
+							<p style="font-size: 26px;margin-left: 20px;margin-top: 20px;">高原徒步</p>
+							<p style="font-size: 16px;margin-left: 10px;margin-top: 30px; margin-right: 10px;line-height: 20px;">起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可...</p>
+						</div>
+						<div style="width: 250px;height: 400px;float: left;margin-left: 50px;">
+							<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtNTAweDMzMC5qcGc_p_p100_p_3D.jpg"
+							 style="width: 100%;">
+							<p style="font-size: 26px;margin-left: 20px;margin-top: 20px;">登山服务</p>
+							<p style="font-size: 16px;margin-left: 10px;margin-top: 30px; margin-right: 10px;line-height: 20px;">起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可...</p>
+						</div>
+						<div style="width: 250px;height: 400px;float: left;margin-left: 50px;">
+							<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNTAweDMzMC5qcGc_p_p100_p_3D.jpg"
+							 style="width: 100%;">
+							<p style="font-size: 26px;margin-left: 20px;margin-top: 20px;">专题活动</p>
+							<p style="font-size: 16px;margin-left: 10px;margin-top: 30px; margin-right: 10px;line-height: 20px;">起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可...</p>
+						</div>
+
+
+
+
+
+					</div>
+
+				</div>
+
+			</div>
+		</template>
+		<template id="no3">
+			<div>
+				<div style="width: 100%;height: 500px;position: relative;">
+					<div style="width: 100%;height: 500px;overflow: hidden;position: relative;">
+						<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg"
+						 style="width: 100%;height: auto;position: absolute;top: -180px;"></div>
+					<p style="font-size: 40px;color: #fff;position: absolute;top: 200px;margin-left: 42%;">DESTINATION</p>
+					<p style="font-size: 20px;color: #fff;position: absolute;top: 260px;margin-left: 20%;"><span style="color: blue;">————————————</span>
+						背上行囊去远方，那个梦寐以求的目的地。
+						<span style="color: blue;">————————————</p>
+				</div>
+				<div style="width: 100%;height: 1300px;background-color: #f3faff;">
+					<div style="width: 100%;height: 100px;background: #f3faff;"></div>
+					<div style="height: 1100px;width: 90%;margin: 0px auto;">
+						<luxian></luxian>
+						<luxian2></luxian2>
+						<luxian3></luxian3>
+						<luxian4></luxian4>
+						<luxian5></luxian5>
+						<luxian6></luxian6>
+					</div>
+				</div>
+
+				<!-- <div style="position:;"> -->
+				<div style="width: 85%;height: 100px;margin: 0 auto;padding-top: 40px;position: relative;top: -80px;box-shadow:5px 5px 10px gray;background: #FFFFFF;z-index: 5;">
+					<dingzhi></dingzhi>
+				</div>
+				<!-- </div> -->
+				<div style="width: 90%;height: 200px;margin: 0 auto;">
+					<div style="width: 33.3%;height: 200px;float: left;">
+						<fuwu></fuwu>
+					</div>
+					<div style="width: 33.3%;height: 200px;float: left;">
+						<fuwu2></fuwu2>
+					</div>
+					<div style="width: 33.3%;height: 200px;float: left;">
+						<fuwu3></fuwu3>
+					</div>
+
+
+				</div>
+
+
+			</div>
+		</template>
+		<template id="no4">
+			<div>
+				<div style="width: 100%;height: 500px;position: relative;">
+					<div style="width: 100%;height: 500px;overflow: hidden;position: relative;">
+						<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg"
+						 style="width: 100%;height: auto;position: absolute;top: -180px;"></div>
+					<p style="font-size: 40px;color: #fff;position: absolute;top: 200px;margin-left: 40%;">TRAVEL GUIDE</p>
+					<p style="font-size: 20px;color: #fff;position: absolute;top: 260px;margin-left: 20%;"><span style="color: blue;">————————————</span>
+						背上行囊去远方，那个梦寐以求的目的地。
+						<span style="color: blue;">————————————</p>
+				</div>
+				<div style="width: 100%;height: 100px;background: #f3faff;"></div>
+				<div style="width: 100%;height: 1600px;background: #f3faff;">
+					<div style="width: 60%;height: 1600px;background: #f3faff;float: left;">
+						<div style="width: 90%;height: 260px;background: #FFFFFF;float: right;">
+							<div style="width: 200px;height: 260px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMDE4MTAxMDA0MmE4MTM0ZTE1M2U0YzU4MjBhYmQwOTItMjAweDI2MC5qcGc_p_p100_p_3D.jpg"
+								 style="width: 100%;height: auto;">
+							</div>
+							<div style="float: left;width: 460px;padding-left: 40px;">
+								<p style="font-size: 20px;margin-top: 40px;">行走在天堂的边缘</p>
+								<p style="line-height: 50px;color: #007AFF;">发布日期：2019-04-01</p>
+								<p style="font-size: 14px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，
+									还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。</p>
+							</div>
+						</div>
+
+						<div style="width: 90%;height: 260px;background: #FFFFFF;float: right;margin-top: 50px;">
+							<div style="width: 200px;height: 260px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNDliZDY4MzkwZDM5ZmIzNDFlZmQ4MzM4Y2Y4ZjZlOGUtMjAweDI2MC5qcGc_p_p100_p_3D.jpg"
+								 style="width: 100%;height: auto;">
+							</div>
+							<div style="float: left;width: 460px;padding-left: 40px;">
+								<p style="font-size: 20px;margin-top: 40px;">鳌太也可以奢游</p>
+								<p style="line-height: 50px;color: #007AFF;">发布日期：2019-04-01</p>
+								<p style="font-size: 14px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，
+									还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。</p>
+							</div>
+						</div>
+						<div style="width: 90%;height: 260px;background: #FFFFFF;float: right;margin-top: 50px;">
+							<div style="width: 200px;height: 260px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZTAxNzFhNmU1ZWVhYjYwNDNjNmRkM2M1YTdjOGE5OTAtMjAweDI2MC5qcGc_p_p100_p_3D.jpg"
+								 style="width: 100%;height: auto;">
+							</div>
+							<div style="float: left;width: 460px;padding-left: 40px;">
+								<p style="font-size: 20px;margin-top: 40px;">太白南北重装行</p>
+								<p style="line-height: 50px;color: #007AFF;">发布日期：2019-04-01</p>
+								<p style="font-size: 14px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，
+									还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。</p>
+							</div>
+						</div>
+						<div style="width: 90%;height: 260px;background: #FFFFFF;float: right;margin-top: 50px;">
+							<div style="width: 200px;height: 260px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTdmZGU0MTVmYTU5MzEyOTdmMmNiZWQ4MjRhZWI4ZDItMjAweDI2MC5qcGc_p_p100_p_3D.jpg"
+								 style="width: 100%;height: auto;">
+							</div>
+							<div style="float: left;width: 460px;padding-left: 40px;">
+								<p style="font-size: 20px;margin-top: 40px;">登梅里雪山冰湖</p>
+								<p style="line-height: 50px;color: #007AFF;">发布日期：2019-04-01</p>
+								<p style="font-size: 14px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，
+									还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。</p>
+							</div>
+						</div>
+						<div style="width: 90%;height: 260px;background: #FFFFFF;float: right;margin-top: 50px;">
+							<div style="width: 200px;height: 260px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTdmZGU0MTVmYTU5MzEyOTdmMmNiZWQ4MjRhZWI4ZDItMjAweDI2MC5qcGc_p_p100_p_3D.jpg"
+								 style="width: 100%;height: auto;">
+							</div>
+							<div style="float: left;width: 460px;padding-left: 40px;">
+								<p style="font-size: 20px;margin-top: 40px;">徒步晋东南,自虐变休闲</p>
+								<p style="line-height: 50px;color: #007AFF;">发布日期：2019-04-01</p>
+								<p style="font-size: 14px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户，
+									还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。</p>
+							</div>
+						</div>
+
+					</div>
+					<div style="width: 35%;height: 1300px;float: left;margin-left: 40px;background: #f3faff;">
+						<input type="" name="" id="" placeholder="搜索" style="width: 300px;height: 45px;border-radius: 25px;margin-left: 20%;border: none;text-indent: 20px;" />
+						<p style="font-size: 40px;line-height: 60px;margin-top: 30px;">NOTES</p>
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMDE4MTAxMDA0MmE4MTM0ZTE1M2U0YzU4MjBhYmQwOTItNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">行走在天堂的边缘</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNDliZDY4MzkwZDM5ZmIzNDFlZmQ4MzM4Y2Y4ZjZlOGUtNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">鳌太也可以奢游</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+						<div style="width: 300px;height: 80px;;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZTAxNzFhNmU1ZWVhYjYwNDNjNmRkM2M1YTdjOGE5OTAtNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">太白南北重装行</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTdmZGU0MTVmYTU5MzEyOTdmMmNiZWQ4MjRhZWI4ZDItNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">登梅里雪山冰湖</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMjNkNGQ0MTljOTQ3NTlkYmFkZDhjZGU0MGZiOThkYWQtNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">	徒步晋东南,自虐变休闲</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+
+						<p style="font-size: 40px;line-height: 60px;margin-top: 30px;">RECOMM</p>
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">织金大峡谷</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">青龙洞青龙洞</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">发布日期：2019.04.01</p>
+						</div>
+						<div style="width: 300px;height: 80px;background: #f3faff;margin-top: 15px;">
+							<div style="width: 80px;height: 80px;float: left;">
+								<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtNjB4NjAuanBn.jpg"
+								 style="width: 100%;height: 100%;">
+							</div>
+							<p style="float: left;line-height: 40px;font-size: 16px;text-indent: 20px;">乌兰布统草原</p>
+							<p style="float: left;line-height: 20px;font-size: 13px;text-indent: 20px;">
+Distance:10.5km　　Days:8</p>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</template>
+		<template id="no5">
+			<div>
+				<div style="width: 100%;height: 500px;position: relative;">
+					<div style="width: 100%;height: 500px;overflow: hidden;position: relative;">
+						<img src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg"
+						 style="width: 100%;height: auto;position: absolute;top: -180px;"></div>
+					<p style="font-size: 40px;color: #fff;position: absolute;top: 200px;margin-left: 45%;">CONTACT</p>
+					<p style="font-size: 20px;color: #fff;position: absolute;top: 260px;margin-left: 20%;"><span style="color: blue;">————————————</span>
+						背上行囊去远方，那个梦寐以求的目的地。
+						<span style="color: blue;">————————————</p>
+				</div>
+				<div style="width: 100%;height: 500px;">
+					<!-- <div id="allmap"></div>
+						<div id="moreaddress;"></div> -->
+					<div>
+						<div id="XSDFXPage" class="XSDFXPage" style="margin: 50px auto;">
+						</div>
+					</div>
+				</div>
+		</template>
+		<template id="guanyu_one">
+			<div>
+				<div style="width: 30%;height: 300px;float: left;" v-for="i in arr">
+					<p style="font-size: 16px;line-height: 34px;">{{i.content}}</p>
+				</div>
+			</div>
+		</template>
+		<template id="guanyu_to">
+			<div>
+				<div style="width: 30%;height: 300px;float: left;margin-left: 50px;" v-for="i in arr">
+					<p style="font-size: 16px;line-height: 34px;">{{i.content}}</p>
+				</div>
+			</div>
+		</template>
+		<!-- <template id="dengshan">
+			<div>
+				<div v-for="i in arr2" style="width: 30%;">
+					<img :src="i.img2" style="width: 100%;height: auto;">
+					<p style="font-size: 24px;line-height: 40px;margin-left: 20px;">{{i.title2}}</p>
+					<p style="font-size: 14px;line-height: 24px;margin-left: 20px;margin-right: 10px;">{{i.content2}}</p>
+				</div>
+			
+			</div>
+		</template> -->
+		<template id="luxian">
+			<div>
+				<div style="width: 30%;height: 500px;float: left;margin: 20px;background-color: #FFFFFF;">
+					<div v-for="i in arr3"><img :src="i.img3" style="width: 100%;height: auto;">
+						<p style="line-height: 50px;font-size: 24px;margin-left: 10px;">{{i.title3}}</p>
+						<p style="line-height: 50px;font-size: 18px;margin-left: 10px;color: #007AFF;">{{i.title_3}}</p>
+						<p style="line-height: 30px;font-size: 12px;margin-left: 10px;">{{i.content3}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="luxian2">
+			<div>
+				<div style="width: 30%;height: 500px;float: left;margin: 20px;background-color: #FFFFFF;">
+					<div v-for="i in arr3"><img :src="i.img3" style="width: 100%;height: auto;">
+						<p style="line-height: 50px;font-size: 24px;margin-left: 10px;">{{i.title3}}</p>
+						<p style="line-height: 50px;font-size: 18px;margin-left: 10px;color: #007AFF;">{{i.title_3}}</p>
+						<p style="line-height: 30px;font-size: 12px;margin-left: 10px;">{{i.content3}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="luxian3">
+			<div>
+				<div style="width: 30%;height: 500px;float: left;margin: 20px;background-color: #FFFFFF;">
+					<div v-for="i in arr3"><img :src="i.img3" style="width: 100%;height: auto;">
+						<p style="line-height: 50px;font-size: 24px;margin-left: 10px;">{{i.title3}}</p>
+						<p style="line-height: 50px;font-size: 18px;margin-left: 10px;color: #007AFF;">{{i.title_3}}</p>
+						<p style="line-height: 30px;font-size: 12px;margin-left: 10px;">{{i.content3}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="luxian4">
+			<div>
+				<div style="width: 30%;height: 500px;float: left;margin: 20px;background-color: #FFFFFF;">
+					<div v-for="i in arr3"><img :src="i.img3" style="width: 100%;height: auto;">
+						<p style="line-height: 50px;font-size: 24px;margin-left: 10px;">{{i.title3}}</p>
+						<p style="line-height: 50px;font-size: 18px;margin-left: 10px;color: #007AFF;">{{i.title_3}}</p>
+						<p style="line-height: 30px;font-size: 12px;margin-left: 10px;">{{i.content3}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="luxian5">
+			<div>
+				<div style="width: 30%;height: 500px;float: left;margin: 20px;background-color: #FFFFFF;">
+					<div v-for="i in arr3"><img :src="i.img3" style="width:100%;height: auto;">
+						<p style="line-height: 50px;font-size: 24px;margin-left: 10px;">{{i.title3}}</p>
+						<p style="line-height: 50px;font-size: 18px;margin-left: 10px;color: #007AFF;">{{i.title_3}}</p>
+						<p style="line-height: 30px;font-size: 12px;margin-left: 10px;">{{i.content3}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="luxian6">
+			<div>
+				<div style="width: 30%;height: 500px;float: left;margin: 20px;background: #FFFFFF;">
+					<div v-for="i in arr3"><img :src="i.img3" style="width: 100%;height: auto;">
+						<p style="line-height: 50px;font-size: 24px;margin-left: 10px;">{{i.title3}}</p>
+						<p style="line-height: 50px;font-size: 18px;margin-left: 10px;color: #007AFF;">{{i.title_3}}</p>
+						<p style="line-height: 30px;font-size: 12px;margin-left: 10px;">{{i.content3}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="dingzhi">
+			<div>
+				<div v-for="i in arr4">
+					<p style="font-size: 22px;text-indent: 50px;line-height: 30px;display: inline-block;">{{i.title4}}</p>
+					<p style="font-size: 14px;text-indent: 50px;line-height: 40px;display: inline-block;">{{i.content4}}</p>
+				</div>
+				<div style="width: 120px;height: 50px;background: #007AFF;text-align: center;font-size: 18px;color: #FFFFFF;position: absolute;top: 50px;line-height: 50px;right:50px;border-radius: 5px;">立即定制</div>
+			</div>
+		</template>
+
+
+		<template id="fuwu">
+			<div>
+				<div v-for="i in arr5">
+					<div style="height: 30px;width: 30px;float: left;">
+						<img :src="i.img5" style="display: inline-block;width: 40px;margin-top: 20px;margin-left: 20px;float: left;">
+					</div>
+					<div style="float: left;">
+						<p style="margin-left: -60px;margin-top: 20px;">{{i.title5}}</p>
+						<p style="margin-left: 100px;">{{i.content5}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="fuwu2">
+			<div>
+				<div v-for="i in arr5">
+					<div style="height: 30px;width: 30px;float: left;">
+						<img :src="i.img5" style="display: inline-block;width: 40px;margin-top: 20px;margin-left: 20px;float: left;">
+					</div>
+					<div style="float: left;">
+						<p style="margin-left: -60px;margin-top: 20px;">{{i.title5}}</p>
+						<p style="margin-left: 100px;">{{i.content5}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+		<template id="fuwu3">
+			<div>
+				<div v-for="i in arr5">
+					<div style="height: 30px;width: 30px;float: left;">
+						<img :src="i.img5" style="display: inline-block;width: 40px;margin-top: 20px;margin-left: 20px;float: left;">
+					</div>
+					<div style="float: left;">
+						<p style="margin-left: -60px;margin-top: 20px;">{{i.title5}}</p>
+						<p style="margin-left: 100px;">{{i.content5}}</p>
+					</div>
+
+				</div>
+			</div>
+		</template>
+
+	</body>
+	<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue-router.js" type="text/javascript" charset="utf-8"></script>
+	<script src="swiper.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=WiYF3M3CVlhqyoY2TLFzOGwx56HUn6tM"></script>
+	<script>
+		Vue.component('fuwu3', {
+			template: '#fuwu3',
+			data() {
+				return {
+					arr5: [{
+							img5: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZjNkMWI4ZDliYmY2NTU4YjIxZjc4ZTY3Nzc4NjhlNGUxLTQzeDQzLnBuZw_p_p100_p_3D_p_p100_p_3D.png'
+						},
+						{
+							title5: '贴心服务'
+						},
+						{
+							content5: '人生就像一场旅行，在乎的是沿途的风景以及看风景的心情。'
+						}
+
+					]
+				}
+			}
+		})
+		Vue.component('fuwu2', {
+			template: '#fuwu2',
+			data() {
+				return {
+					arr5: [{
+							img5: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZjNkMWI4ZDliYmY2NTU4YjIxZjc4ZTY3Nzc4NjhlNGUyLTQzeDQzLnBuZw_p_p100_p_3D_p_p100_p_3D.png'
+						},
+						{
+							title5: '体验丰富'
+						},
+						{
+							content5: '人生就像一场旅行，在乎的是沿途的风景以及看风景的心情。'
+						}
+
+					]
+				}
+			}
+		})
+		Vue.component('fuwu', {
+			template: '#fuwu',
+			data() {
+				return {
+					arr5: [{
+							img5: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZjNkMWI4ZDliYmY2NTU4YjIxZjc4ZTY3Nzc4NjhlNGUtNDB4NDAucG5n.png'
+						},
+						{
+							title5: '安全保障'
+						},
+						{
+							content5: '人生就像一场旅行，在乎的是沿途的风景以及看风景的心情。'
+						}
+
+					]
+				}
+			}
+		})
+
+		Vue.component('dingzhi', {
+			template: '#dingzhi',
+			data() {
+				return {
+					arr4: [{
+							title4: '服务定制'
+						},
+						{
+							content4: "TRAVEL旨在分享户外，让更多的人喜欢户外，热爱大自然，享受大自然的恩赐。"
+						},
+						// {title_4:'立即定制'}
+					]
+				}
+			}
+		})
+
+
+		Vue.component('luxian6', {
+			template: '#luxian6',
+			data() {
+				return {
+					arr3: [{
+							img3: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctODAweDUwMC5qcGc_p_p100_p_3D.jpg'
+						},
+						{
+							title3: '梵净山'
+						},
+						{
+							title_3: 'Distance:4.3km　　Days:4'
+						},
+						{
+							content3: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。'
+						}
+
+					]
+				}
+			}
+		})
+		Vue.component('luxian5', {
+			template: '#luxian5',
+			data() {
+				return {
+					arr3: [{
+							img3: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtODAweDUwMC5qcGc_p_p100_p_3D.jpg'
+						},
+						{
+							title3: '织金大峡谷'
+						},
+						{
+							title_3: 'Distance:8.5km　　Days:7'
+						},
+						{
+							content3: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。'
+						}
+
+					]
+				}
+			}
+		})
+		Vue.component('luxian4', {
+			template: '#luxian4',
+			data() {
+				return {
+					arr3: [{
+							img3: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtODAweDUwMC5qcGc_p_p100_p_3D.jpg'
+						},
+						{
+							title3: '格凸河'
+						},
+						{
+							title_3: 'Distance:3.5km　　Days:2'
+						},
+						{
+							content3: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。'
+						}
+
+					]
+				}
+			}
+		})
+		Vue.component('luxian3', {
+			template: '#luxian3',
+			data() {
+				return {
+					arr3: [{
+							img3: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtODAweDUwMC5qcGc_p_p100_p_3D.jpg'
+						},
+						{
+							title3: '乌兰布统草原'
+						},
+						{
+							title_3: 'Distance:10.5km　　Days:8'
+						},
+						{
+							content3: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。'
+						}
+
+					]
+				}
+			}
+		})
+
+		Vue.component('luxian', {
+			template: '#luxian',
+			data() {
+				return {
+					arr3: [{
+							img3: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtODAweDUwMC5qcGc_p_p100_p_3D.jpg'
+						},
+						{
+							title3: '织金大峡谷'
+						},
+						{
+							title_3: 'Distance:8.5km　　Days:7'
+						},
+						{
+							content3: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。'
+						}
+
+					]
+				}
+			}
+		})
+		Vue.component('luxian2', {
+			template: '#luxian2',
+			data() {
+				return {
+					arr3: [{
+							img3: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItODAweDUwMC5qcGc_p_p100_p_3D.jpg'
+						},
+						{
+							title3: '青龙洞'
+						},
+						{
+							title_3: 'Distance:6.5km　　Days:5'
+						},
+						{
+							content3: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。'
+						}
+
+					]
+				}
+			}
+		})
+
+
+
+
+
+		// Vue.component('dengshan',{
+		// 	template:"#dengshan",
+		// 	data(){
+		// 		return{
+		// 			arr2:[{img2:'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNTAweDMzMC5qcGc_p_p100_p_3D.jpg'},
+		// 			{title2:'高原徒步'},
+		// 			{content2:'起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可...'}
+		// 			]
+		// 		}
+		// 	}
+		// })
+
+
+
+		Vue.component('guanyu_one', {
+			template: '#guanyu_one',
+			data() {
+				return {
+					arr: [{
+						content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。'
+					}]
+				}
+			}
+		})
+		Vue.component('guanyu_to', {
+			template: '#guanyu_to',
+			data() {
+				return {
+					arr: [{
+						content: '当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。'
+					}]
+				}
+			}
+		})
+
+
+		var router = new VueRouter({
+			routes: [{
+					path: '/',
+					component: {
+						template: '#no1'
+					}
+				},
+				{
+					path: '/no2',
+					component: {
+						template: '#no2'
+					}
+				},
+				{
+					path: '/no3',
+					component: {
+						template: '#no3'
+					}
+				},
+				{
+					path: '/no4',
+					component: {
+						template: '#no4'
+					}
+				},
+				{
+					path: '/no5',
+					component: {
+						template: '#no5'
+					}
+				},
+			]
+		})
+		new Vue({
+			el: "#box",
+			data: {
+				arr: [{
+						name: '首页',
+						path: '#/'
+					},
+					{
+						name: '关于',
+						path: '#/no2'
+					},
+					{
+						name: '路线',
+						path: '#/no3'
+					},
+					{
+						name: '攻略',
+						path: '#/no4'
+					},
+					{
+						name: '联系',
+						path: '#/no5'
+					}
+				]
+			},
+			router
+		})
+	</script>
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			paginationClickable: '.swiper-pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			spaceBetween: 30
+		});
+	</script>
+	<!-- <script type="text/javascript">
+		
+	var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        paginationClickable: '.swiper-pagination',
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev',
+	        spaceBetween: 30
+	    });
+	    </script> -->
+	<script>
+		// 百度地图API功能
+		// 创建Map实例
+
+		var markerPointLevel1 = [{
+				buildingNum: "123",
+				id: 1,
+				lat: "30.207036169515438",
+				lng: "120.08899292561351",
+				name: "西湖区"
+			},
+			{
+				buildingNum: "79",
+				id: 2,
+				lat: "30.34473201035828",
+				lng: "120.15884493257122",
+				name: "拱墅区"
+			},
+			{
+				buildingNum: "51",
+				id: 3,
+				lat: "30.187587607727094",
+				lng: "120.19237042945677",
+				name: "滨江区"
+			},
+			{
+				buildingNum: "16",
+				id: 6,
+				lat: "30.2323576392334",
+				lng: "120.18012613888587",
+				name: "上城区"
+			}
+		];
+
+		var data = {
+			center: {
+				level: 15,
+				longitude: 120.154571,
+				dimensionality: 30.270801
+			},
+			setting: {
+				cityName: "杭州",
+				enableScrollWheelZoom: true,
+				imgSize: {
+					x: 20,
+					y: 50
+				},
+				param: {
+					//说明窗口
+					width: 5,
+					height: 3,
+					title: "高压塔3"
+				}
+			}
+		}
+		var map = new BMap.Map("XSDFXPage", {
+			enableMapClick: true
+		});
+		const point = new BMap.Point(
+			data.center.longitude,
+			data.center.dimensionality
+		);
+		map.centerAndZoom(point, data.center.level);
+		// 添加地图类型控件
+		map.addControl(new BMap.MapTypeControl());
+		// 设置地图显示的城市 此项是必须设置的
+		map.setCurrentCity("杭州");
+		// 开启鼠标滚轮缩放
+		map.enableScrollWheelZoom(true);
+
+		/************************************************
+		 添加工具条、比例尺控件
+		 *************************************************/
+		map.addControl(new BMap.ScaleControl({
+			anchor: BMAP_ANCHOR_TOP_LEFT
+		}));
+		map.addControl(new BMap.NavigationControl());
+		map.addControl(
+			new BMap.NavigationControl({
+				anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+				type: BMAP_NAVIGATION_CONTROL_SMALL
+			})
+		);
+		/************************************************/
+
+
+
+		/*覆盖物1级层 zoom<11的时候展示
+		 --------------------------------*/
+		function ComplexCustomOverlay1(point, nums, area, districtId) {
+			this._point = point;
+			this._nums = nums;
+			this._area = area;
+			this._districtId = districtId;
+		}
+		ComplexCustomOverlay1.prototype = new BMap.Overlay();
+
+		ComplexCustomOverlay1.prototype.initialize = function(map) {
+			this._map = map;
+			var div = (this._div = document.createElement("div"));
+			var point = this._point;
+			div.style.position = "absolute";
+			div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+			div.style.backgroundColor = "rgba(234,41,60,0.8)";
+			div.style.color = "#fff";
+			div.style.height = "80px";
+			div.style.width = "80px";
+			div.style.borderRadius = "100%";
+			div.style.boxSizing = "content-box";
+			div.style.whiteSpace = "nowrap";
+			div.style.MozUserSelect = "none";
+			div.style.fontSize = "12px";
+			div.style.textAlign = "center";
+			div.style.cursor = "pointer";
+
+			//区
+			var areaDom = (this._areaDom = document.createElement("div"));
+			areaDom.appendChild(document.createTextNode(this._area));
+			areaDom.style.height = "40px";
+			areaDom.style.lineHeight = "60px";
+			areaDom.style.fontSize = "14px";
+			div.appendChild(areaDom);
+
+			//楼盘数量
+			var numsDom = (this._numsDom = document.createElement("div"));
+			numsDom.appendChild(document.createTextNode(this._nums + "个楼盘"));
+			numsDom.style.height = "40px";
+			numsDom.style.lineHeight = "20px";
+			numsDom.style.boxSizing = "content-box";
+			numsDom.style.fontSize = "14px";
+			div.appendChild(numsDom);
+
+			var that = this;
+
+			div.onmouseover = function() {
+				this.style.zIndex = 99999;
+				this.style.backgroundColor = "rgba(234,41,60,1)";
+			};
+			div.onmouseout = function() {
+				this.style.zIndex = BMap.Overlay.getZIndex(point.lat);
+				this.style.backgroundColor = "rgba(234,41,60,0.8)";
+			};
+			div.onclick = function() {
+				filterObj.districtId = that._districtId;
+				map.centerAndZoom(point, 14); //跳到设置点并设置zoom为14级
+				$(".l-select.district").find(".result")[0].childNodes[0].textContent =
+					that._area; //点击区域,相应左侧区域文字要同步
+			};
+			map.getPanes().labelPane.appendChild(div);
+
+			return div;
+		};
+
+		ComplexCustomOverlay1.prototype.draw = function() {
+			var map = this._map;
+			var pixel = map.pointToOverlayPixel(this._point);
+			this._div.style.left = pixel.x - 40 + "px";
+			this._div.style.top = pixel.y - 40 + "px";
+		}
+
+		function ComplexCustomOverlay1(point, nums, area, districtId) {
+			this._point = point;
+			this._nums = nums;
+			this._area = area;
+			this._districtId = districtId;
+		}
+
+		// 编写自定义函数,创建标注(1级)
+		function addMarkerLevel1(point, nums, area, districtId) {
+			// var marker = new BMap.Marker(point);
+			// map.addOverlay(marker);
+			var myCompOverlay = new ComplexCustomOverlay1(
+				point,
+				nums,
+				area,
+				districtId
+			);
+			map.addOverlay(myCompOverlay);
+		}
+
+		map.clearOverlays();
+		for (let i = 1; i < markerPointLevel1.length; i++) {
+			let point = new BMap.Point(
+				markerPointLevel1[i].lng,
+				markerPointLevel1[i].lat
+			);
+			addMarkerLevel1(
+				point,
+				markerPointLevel1[i].buildingNum,
+				markerPointLevel1[i].name,
+				markerPointLevel1[i].id
+			);
+		}
+	</script>
+
+</html>
